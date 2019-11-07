@@ -3,5 +3,5 @@ data:
   foo: bar
 kind: ConfigMap
 metadata:
-  name: exampleconfig
+  name: example-config
   namespace: default
