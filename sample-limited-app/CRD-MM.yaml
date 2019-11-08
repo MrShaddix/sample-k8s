@@ -1,4 +1,4 @@
-apiVersion: internal.ryan.com/v1
+apiVersion: v1
 kind: ManagedMicroservice
 metadata:
   name: cowsay
