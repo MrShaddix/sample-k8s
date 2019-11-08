@@ -1,57 +1,8 @@
 apiVersion: v1
 kind: ManagedMicroservice
 metadata:
-  name: cowsay
+  name: managed-microservice
   namespace: default
 
 spec:
-  ApplicationOwner:
-    Domain : platform
-    Market : infrastructure
-    Team   : starship
-    Art    : epa
-
-  Routing:
-    Stage: released
-
-  #Existing/Live Deploy
-  CurrentDefinition:
-
-    VersionLabel: 1-4-0-rc1         # set the version label explicitly
-    Image: service:v1               # image tag for the 'Live' version of service
-    ImagePullPolicy: IfNotPresent   # imagePullPolicy setting. default is 'IfNotPresent'
-
-    # Use Kubernetes HorizontalPodAutoscalerSpec? (https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.13/#horizontalpodautoscalerspec-v1-autoscaling)
-    AutoScalingPolicy:
-      MinReplicas: 3
-      MaxReplicas: 10
-      TargetCpuUtilization: 50
-
-    ServiceHealth:
-      CrashloopTimeoutSeconds: 300
-      # Use Kubernetes Probe v1 Spec? (https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.13/#probe-v1-core)
-      ReadinessProbe:
-        InitialDelaySeconds: 15
-        PeriodSeconds: 5
-        TimeoutSeconds: 1
-        Port: 8080
-        HealthEndpoint: /cowsay
-      # Use Kubernetes Probe v1 Spec? (https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.13/#probe-v1-core)
-      LivenessProbe:
-        InitialDelaySeconds: 15
-        PeriodSeconds: 5
-        TimeoutSeconds: 1
-        Port: 8080
-        HealthEndpoint: /cowsay
-
-    Resources:
-      Requests:
-        Memory: 512Mi
-        CPU: 50m
-      Limits:
-        Memory: 2Gi
-        CPU: 1000m
-
-    # Use Kubernetes PodDisruptionBudgetSpec (https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.13/#poddisruptionbudgetspec-v1beta1-policy) ?
-    PodDisruptionBudget:
-      MinAvailable: 70%
+  derp: dur
