@@ -2,7 +2,7 @@ apiVersion: internal.ryan.com/v1
 kind: ManagedMicroservice
 metadata:
   name: cowsay
-  namespace: application
+  namespace: default
 
 spec:
   ApplicationOwner:
